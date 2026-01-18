@@ -377,14 +377,17 @@ header {
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #2e2f42;
-  display: flex;
   color: #f4f4fd;
 }
 .footer-content {
+  
+  display: flex;
+  gap: 120px;
+  flex-direction: row;
+}
+.foot-logo-text {
   max-width: 264px;
-  margin-left: 156px;
-  margin-right: 120px;
-  padding: 0;
+
 }
 .footer-content .logo {
   color: #f4f4fd;
@@ -394,6 +397,10 @@ header {
 }
 .footer-text {
   margin-top: 16px;
+
+}
+.footer-social {
+  max-width: 208px;
 }
 .footer-social-icon {
   display: flex;
