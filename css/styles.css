@@ -67,7 +67,7 @@ a {
 }
 a:hover,
 a:focus,
-.current {
+.header-nav-link.current {
   color: #404bbf;
 }
 a:active {
@@ -105,6 +105,8 @@ section {
 }
 header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+
 }
 .header-container {
   display: flex;
@@ -123,14 +125,13 @@ header {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
-.header-nav-list-item {
-  position: relative;
-}
+
 .header-nav-link {
   padding: 24px 0;
   display: inline-block;
+  position: relative;
 }
-.header-nav-list-item::after {
+.header-nav-link::after {
   content: "";
   width: 100%;
   height: 4px;
@@ -143,19 +144,10 @@ header {
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-nav-list-item:hover::after {
+.header-nav-link:hover::after, 
+.header-nav-link.current::after,
+.header-nav-link:focus::after {
   opacity: 1;
-}
-.header-nav-link.current::after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  display: inline-block;
-  background-color: #404bbf;
-  border-radius: 2px;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
 }
 .header-address {
   flex-shrink: 0;
@@ -230,6 +222,7 @@ header {
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
+  height: 112px;
 }
 .values-icons {
   width: 64px;
@@ -291,10 +284,12 @@ header {
   box-sizing: border-box;
   text-align: center;
 }
-.team-social-icon {
+.team-card-text p {
+  margin-bottom: 8px;
+}
+.team-social-list {
   display: flex;
   gap: 24px;
-  margin-top: 8px;
 }
 .team-social-icon a {
   display: flex;
@@ -306,7 +301,7 @@ header {
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-social-icon a:hover {
+.team-social-icon a:hover, .team-social-icon a:focus {
   background-color: #404bbf;
 }
 .team-social-icon-svg {
@@ -323,7 +318,7 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 46px 24px;
+  gap: 48px 24px;
   align-items: center;
   padding-left: 0;
 }
@@ -402,7 +397,7 @@ header {
 .footer-social {
   max-width: 208px;
 }
-.footer-social-icon {
+.footer-social-list{
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -410,7 +405,7 @@ header {
 .footer-social p {
   margin-bottom: 16px;
 }
-.footer-social-icon a {
+.footer-social-icon a{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,7 +415,7 @@ header {
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-social-icon a:hover {
+.footer-social-icon a:hover, .footer-social-icon a:focus {
   background-color: #31d0aa;
 }
 .footer-social-icon-svg {
